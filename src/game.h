@@ -32,8 +32,9 @@ private:
 
     SDL_Window*   _window  = nullptr;
     SDL_Renderer* _render  = nullptr;
+    SDL_Texture*  _img     = nullptr; 
     SDL_Texture*  _texture = nullptr;
-    SDL_Rect      _rect;
+    SDL_Rect     _rect;
 };
 
 

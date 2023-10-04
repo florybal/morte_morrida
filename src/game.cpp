@@ -3,14 +3,6 @@
 //
 #include "game.h"
 
-typedef struct {
-	int x;
-	int y;
-	SDL_Texture *texture;
-} Entity;
-
-
-
 game::game()
 {
 
@@ -41,6 +33,7 @@ void game::clean()
 
     SDL_DestroyRenderer(_render);
     SDL_DestroyWindow(_window);
+    SDL_DestroyTexture(_img);
     SDL_Quit();
 
 }
@@ -53,6 +46,7 @@ void game::render()
 {
     SDL_RenderClear(_render);
     SDL_SetRenderDrawColor(_render, 96, 128, 150, 100);
+    SDL_RenderCopy(_render, _img, NULL, &_rect);
     SDL_RenderPresent(_render);
 }
 
@@ -69,6 +63,7 @@ void game::init()
 
     if (SDL_Init(SDL_INIT_VIDEO)< 0)
         std::cout<<"nao foi possivel inicializar o SDL: \n" << SDL_GetError();
+    
 
     if(!_window)
         std::cout<<"nao foi possivel criar a janela: \n"
@@ -80,7 +75,14 @@ void game::init()
 
     if(!_render)
         std::cout<<"nao foi possivel criar renderer : \n" << SDL_GetError();
+    
+    _img = IMG_LoadTexture(_render, "../assets/cat.png");
 
+    _rect.x = 16;
+    _rect.y = 16;
+    _rect.w = screen_Width/2  - _rect.x/2;
+    _rect.h = screen_Height/2 - _rect.y/2;
+    
 }   
 
 void game::processEvent()
