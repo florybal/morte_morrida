@@ -1,1 +1,4 @@
-# joguinho para uma gamejam antiga que fiz no game maker 2
+# morte morrida
+
+joguinho que fiz para uma gamejam no game maker 2 
+agora refazendo em c++
