@@ -71,7 +71,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(SolutionDir)\SDL2\include;$(PublicIncludeDirectories);$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)\src\;$(SolutionDir)\SDL2\include;$(PublicIncludeDirectories);$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)\SDL2\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -134,10 +134,12 @@
   <ItemGroup>
     <ClCompile Include="..\..\..\projetos\morte_morrida\src\game.cpp" />
     <ClCompile Include="..\..\..\projetos\morte_morrida\src\main.cpp" />
+    <ClCompile Include="src\textureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\projetos\morte_morrida\src\game.h" />
     <ClInclude Include="..\..\..\projetos\morte_morrida\src\include.h" />
+    <ClInclude Include="src\textureManager.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
