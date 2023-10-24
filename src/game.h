@@ -19,7 +19,6 @@ private:
     void processEvent();
     void update();
     void render();
-    //void renderTile(int x, int y, SDL_Texture* texture);
     void init();
     void clean();
 

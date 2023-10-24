@@ -22,7 +22,6 @@ void game::run()
         processEvent();
         update();
         render();
-        //n_game-> renderTile(tileWidth, tileHeight, _texture);
     }
     clean();
     
@@ -33,7 +32,7 @@ void game::clean()
 
     SDL_DestroyRenderer(_render);
     SDL_DestroyWindow(_window);
-    SDL_DestroyTexture(_img);
+    //SDL_DestroyTexture(_img);
     SDL_Quit();
 
 }
@@ -41,15 +40,16 @@ void game::clean()
 void game::update()
 {
 
-    m_currentFrame = int((( SDL_GetTicks() / 100) %6 ));
+    m_currentFrame = int((( SDL_GetTicks() / 100) % 6 ));
 
 }
 void game::render()
 {
     SDL_RenderClear(_render);
-    m_textureManager.draw("noguchi", 0, 0, 128, 82, _render);
 
-    m_textureManager.drawFrame("noguchi", 100, 100, 128, 82, 1, m_currentFrame, _render);
+    m_textureManager.draw("personagem", 0, 0, 168, 216, _render);
+
+    m_textureManager.drawFrame("personagem", 0, 0, 168, 216, 1, m_currentFrame, _render, SDL_FLIP_HORIZONTAL);
 
     SDL_SetRenderDrawColor(_render, 96, 128, 150, 100);
     SDL_RenderPresent(_render);
@@ -81,7 +81,7 @@ void game::init()
     if(!_render)
         std::cout<<"nao foi possivel criar renderer : \n" << SDL_GetError();
     
-    m_textureManager.load("../assets/noguchi_128x128.png");
+    m_textureManager.load("../assets/personagem_56x72.png", "personagem", _render);
 }   
 
 void game::processEvent()

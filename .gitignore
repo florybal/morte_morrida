@@ -1,7 +1,13 @@
 .vs/
 x64/
 SDL2/
-morte_morrida.sln
-morte_morrida.vcxproj
-morte_morrida.vcxproj.filters
-morte_morrida.vcxproj.user
+*morte_morrida.sln
+*morte_morrida.vcxproj
+*morte_morrida.vcxproj.filters
+*morte_morrida.vcxproj.user
+build/
+.idea/
+*.suo
+*.user
+*.sln.docstates
+
